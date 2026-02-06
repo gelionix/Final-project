@@ -1,5 +1,7 @@
 //state colors
 :root {
+  --wite-color: #FFFFFF;
+
   --main-color: #323264;
   --main-alt-color: #46466e;
   --main-soft-color: #686887;
@@ -19,7 +21,7 @@
   --main-gradient: linear-gradient(130deg, #323264 70%, #a54b5f);
   --soft-gradient: linear-gradient(42deg, #323264 50%, #7a425e);
   --red-gradient: linear-gradient(325deg, #f0145a 5%, #693264 70%);
-  --supersoft-gradient: linear-gradient(230deg, #323264 60%, #643e72 90%);
+  --super-soft-gradient: linear-gradient(230deg, #323264 60%, #643e72 90%);
 
   --red-text-gradient: linear-gradient(90deg, #f0145a, #ef8080);
   --red-reversed-gradient: linear-gradient(270deg, #f0145a, #ef8080);
@@ -70,6 +72,12 @@ $transition-deley: 0.3s ease-in-out;
   &:active {
     --brand-regular-color: var(--brand-active-color);
   }
+}
+
+@mixin text-gradient($gradient: var(--red-gradient)) {
+  color: transparent;
+  background: $gradient;
+  background-clip: text;
 }
 
 @mixin viewport-md {
