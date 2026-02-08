@@ -60,17 +60,17 @@ $transition-deley: 0.3s ease-in-out;
   }
 }
 
-@mixin link {
-  color: var(--brand-regular-color);
+@mixin link($default-color: var(--brand-regular-color)) {
+  color: $default-color;
   text-decoration: none;
   transition: color $transition-deley;
 
   @include hover {
-  --brand-regular-color: var(--accent-color);
+  color: var(--accent-color);
   }
 
   &:active {
-    --brand-regular-color: var(--brand-active-color);
+    color: var(--brand-active-color);
   }
 }
 

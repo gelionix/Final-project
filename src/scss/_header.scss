@@ -166,16 +166,14 @@
   &__nav-item {
   }
   &__nav-link {
-    color: var(--wite-color);
-    text-decoration: none;
+    @include v.link(var(--wite-color));
+
     text-transform: lowercase;
     font-weight: 700;
     padding-bottom: 3px;
     border-bottom: 2px solid transparent;
 
     @include v.hover {
-      --wite-color: var(--accent-color);
-
       border-color: var(--accent-color);
     }
   }
@@ -188,16 +186,22 @@
     }
   }
   &__phone {
-    color: var(--wite-color);
+    @include v.link(var(--wite-color));
+    
     font-weight: 700;
-    text-decoration: none;
   }
   &__social {
     display: none;
 
     @media (min-width: v.$breacpoint-md) {
+      @include v.link(var(--wite-color));
+
       display: block;
-      color: var(--wite-color);
+    }
+
+    svg {
+      width: 24px;
+      height: 24px;
     }
   }
 }
