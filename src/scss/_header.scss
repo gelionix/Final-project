@@ -1,49 +1,203 @@
-@use 'vars' as v;
+@use "vars" as v;
 
 .head {
-    @include v.flex(space-between, stretch);
-    
-    flex-direction: column;
-    min-height: 100vh;
+  @include v.flex(space-between, stretch);
 
+  flex-direction: column;
+  min-height: 100vh;
+  background: url(/src/img/icons/hilegal-symbol.svg) no-repeat center/auto 100%;
 
   &__header {
   }
   &__link {
+    width: 42px;
+    height: 42px;
+    border-radius: v.$rounded-full;
+    color: var(--wite-color);
+    border: 2px solid var(--wite-color);
+    margin: 0 auto 30px;
+    position: relative;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 9px;
+      left: 12px;
+      width: 14px;
+      height: 14px;
+      border-bottom: 2px solid var(--wite-color);
+      border-left: 2px solid var(--wite-color);
+      transform: rotate(-45deg);
+    }
   }
   &__title {
     color: var(--wite-color);
     font-size: 38px;
     font-weight: 700;
+    text-align: center;
   }
 }
 .header {
+  @media (min-width: v.$breacpoint-md) {
+    padding: 50px;
+  }
+
   &__address {
+    display: none;
+
+    @media (min-width: v.$breacpoint-md) {
+      display: block;
+      counter-reset: var(--grey-text-color);
+    }
   }
   &__box {
+    @include v.flex;
+
+    margin: 0 -15px;
+    padding: 15px 0 10px;
+
+    @media (min-width: v.$breacpoint-md) {
+      margin: 0;
+      padding: 0;
+    }
+
+    @media (min-width: v.$breacpoint-lg) {
+      position: absolute;
+      top: 50%;
+      left: 30;
+      transform: translateY(-50%);
+    }
   }
   &__box-burger {
+    position: relative;
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+
+    @media (min-width: v.$breacpoint-md) {
+      display: none;
+    }
+
+    &::before,
+    &::after,
+    span {
+      content: "";
+      position: absolute;
+      top: 8px;
+      left: 6px;
+      right: 6px;
+      height: 2px;
+      background: var(--wite-color);
+    }
+
+    &::after {
+      top: auto;
+      bottom: 8px;
+    }
+
+    span {
+      top: 50%;
+      transform: translateY(-50%);
+    }
   }
   &__box-logo {
+
+    img {
+      @media (min-width: v.$breacpoint-md) {
+      width: 130px;
+      height: 60px;
+    }
+    }
   }
   &__container {
+    @media (min-width: v.$breacpoint-md) {
+      display: flex;
+      flex-flow: column;
+      gap: 30px;
+    }
+
+    @media (min-width: v.$breacpoint-lg) {
+      position: relative;
+      gap: 16px;
+    }
   }
   &__inner {
+    @include v.flex;
+
+    margin: 0 -30px;
+    padding: 10px 15px;
+    background: rgba(245, 245, 250, 0.2);
+
+    @media (min-width: v.$breacpoint-md) {
+      margin: 0;
+      padding: 0;
+      background: none;
+      justify-content: flex-start;
+      gap: 6px;
+    }
+
+    @media (min-width: v.$breacpoint-lg) {
+      justify-content: flex-end;
+    }
   }
   &__lang {
+    display: flex;
   }
   &__lang-item {
+    cursor: pointer;
+    padding: 5px 7px;
+    font-weight: 700;
+    font-size: 12px;
+    letter-spacing: 1px;
+    border-radius: v.$rounded-sm;
+    color: var(--wite-color);
+
+    &.active {
+      background: var(--accent-color);
+    }
   }
   &__nav {
+    display: none;
+
+    @media (min-width: v.$breacpoint-md) {
+      display: block;
+    }
   }
   &__nav-item {
   }
   &__nav-link {
+    color: var(--wite-color);
+    text-decoration: none;
+    text-transform: lowercase;
+    font-weight: 700;
+    padding-bottom: 3px;
+    border-bottom: 2px solid transparent;
+
+    @include v.hover {
+      --wite-color: var(--accent-color);
+
+      border-color: var(--accent-color);
+    }
   }
   &__nav-list {
+    display: flex;
+    gap: 15px;
+
+    @media (min-width: v.$breacpoint-lg) {
+      justify-content: flex-end;
+    }
   }
   &__phone {
+    color: var(--wite-color);
+    font-weight: 700;
+    text-decoration: none;
   }
   &__social {
+    display: none;
+
+    @media (min-width: v.$breacpoint-md) {
+      display: block;
+      color: var(--wite-color);
+    }
   }
 }

@@ -1,30 +1,49 @@
-@use 'vars' as v;
+@use "vars" as v;
 
 body {
-    font-family: v.$main-font;
-    font-weight: 400;
+  font-family: v.$main-font;
+  font-weight: 400;
 }
 
 .wrapper {
-    background: var(--super-soft-gradient);
+  background: var(--super-soft-gradient);
 }
 .container {
-    padding: 0 30px;
+  padding: 0 30px;
 
-    @media (min-width: v.$breacpoint-md) {
-        max-width: 708px;
-        margin: 0 auto;
+  @media (min-width: v.$breacpoint-md) {
+    max-width: 708px;
+    margin: 0 auto;
+  }
+
+  @media (min-width: v.$breacpoint-lg) {
+    max-width: 964px;
+  }
+
+  @media (min-width: v.$breacpoint-xl) {
+    max-width: 1380px;
+  }
+
+  @media (min-width: v.$breacpoint-xxl) {
+    max-width: 1660px;
+  }
+}
+
+.dotted {
+  display: none;
+
+  @media (min-width: v.$breacpoint-md) {
+    display: block;
+    width: 6px;
+    height: 6px;
+    border-radius: v.$rounded-full;
+
+    &--default {
+      background: var(--grey-separator-color);
     }
 
-    @media (min-width: v.$breacpoint-lg) {
-        max-width: 964px;
+    &--gray {
+      --grey-separator-color: var(--grey-text-color);
     }
-
-    @media (min-width: v.$breacpoint-xl) {
-        max-width: 1380px;
-    }
-
-    @media (min-width: v.$breacpoint-xxl) {
-        max-width: 1660px;
-    }
+  }
 }
