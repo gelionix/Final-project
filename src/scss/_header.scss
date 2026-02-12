@@ -10,11 +10,12 @@
   &__header {
   }
   &__link {
+    @include v.link(var(--wite-color));
+
     width: 42px;
     height: 42px;
     border-radius: v.$rounded-full;
-    color: var(--wite-color);
-    border: 2px solid var(--wite-color);
+    border: 2px solid;
     margin: 0 auto 30px;
     position: relative;
 
@@ -25,8 +26,8 @@
       left: 12px;
       width: 14px;
       height: 14px;
-      border-bottom: 2px solid var(--wite-color);
-      border-left: 2px solid var(--wite-color);
+      border-bottom: 2px solid;
+      border-left: 2px solid;
       transform: rotate(-45deg);
     }
   }
@@ -64,7 +65,7 @@
     @media (min-width: v.$breacpoint-lg) {
       position: absolute;
       top: 50%;
-      left: 30;
+      left: 30px;
       transform: translateY(-50%);
     }
   }
@@ -101,12 +102,11 @@
     }
   }
   &__box-logo {
-
     img {
       @media (min-width: v.$breacpoint-md) {
-      width: 130px;
-      height: 60px;
-    }
+        width: 130px;
+        height: 60px;
+      }
     }
   }
   &__container {
@@ -187,7 +187,7 @@
   }
   &__phone {
     @include v.link(var(--wite-color));
-    
+
     font-weight: 700;
   }
   &__social {
