@@ -1,6 +1,7 @@
 @use "vars" as v;
 
 .footer {
+  color: var(--grey-bg-color);
 
   &__container {
     @include v.flex(center);
@@ -10,7 +11,7 @@
     position: relative;
 
     @media (min-width: v.$breacpoint-md) {
-      @include v.flex(center,flex-start);
+      align-items: flex-start;
     }
   }
 
@@ -20,7 +21,7 @@
     gap: 21px;
 
     @media (min-width: v.$breacpoint-md) {
-      @include v.flex(center,flex-start);
+      align-items: flex-start;
     }
   }
 
@@ -46,7 +47,7 @@
   }
 
   &__map {
-    @include v.link;
+    @include v.link(var(--brand-regular-color));
 
     font-weight: 700;
     font-size: 12px;
@@ -59,7 +60,6 @@
 
     flex-direction: column;
     gap: 10px;
-    
 
     @media (min-width: v.$breacpoint-md) {
       flex-direction: row;
@@ -69,6 +69,7 @@
   &__phone {
     @include v.link(var(--main-alt-color));
 
+    text-decoration: none;
     font-weight: 700;
   }
 
