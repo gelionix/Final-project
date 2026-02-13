@@ -46,6 +46,16 @@ $breacpoint-xxl: 1920px;
 $transition-deley: 0.3s ease-in-out;
 
 // mixins
+@mixin subtitle($color: var(--grey-text-color)) {
+  font-size: 30px;
+  font-weight: 700;
+  color: $color;
+
+  @media (min-width: $breacpoint-md) {
+      font-size: 38px;
+    }
+}
+
 @mixin flex($justify-content: space-between, $align-items: center) {
   display: flex;
   justify-content: $justify-content;
@@ -54,7 +64,7 @@ $transition-deley: 0.3s ease-in-out;
 
 @mixin hover {
   @media (hover: hover) and (pointer: fine) {
-    &:hover {
+    &:hover:not(.active) {
       @content;
     }
   }

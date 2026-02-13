@@ -1,1 +1,21 @@
 import '../scss/style.scss';
+
+(function () {
+  const tabs = document.querySelectorAll('.tabs__links-item');
+  const content = document.querySelectorAll('.tabs__content-item');
+
+  tabs.forEach((tab, index) => {
+    tab.addEventListener('click', () => {
+      tabs.forEach((tab) => {
+        tab.classList.remove('active');
+      });
+
+      content.forEach((item) => {
+        item.classList.remove('active');
+      });
+
+      tabs[index].classList.add('active');
+      content[index].classList.add('active');
+    });
+  });
+})();
