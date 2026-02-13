@@ -9,6 +9,7 @@
 
   &__header {
   }
+
   &__link {
     @include v.link(var(--wite-color));
 
@@ -31,6 +32,7 @@
       transform: rotate(-45deg);
     }
   }
+
   &__title {
     color: var(--wite-color);
     font-size: 38px;
@@ -51,6 +53,7 @@
       counter-reset: var(--grey-text-color);
     }
   }
+
   &__box {
     @include v.flex;
 
@@ -69,6 +72,7 @@
       transform: translateY(-50%);
     }
   }
+
   &__box-burger {
     position: relative;
     width: 32px;
@@ -101,6 +105,7 @@
       transform: translateY(-50%);
     }
   }
+
   &__box-logo {
     img {
       @media (min-width: v.$breacpoint-md) {
@@ -109,6 +114,7 @@
       }
     }
   }
+
   &__container {
     @media (min-width: v.$breacpoint-md) {
       display: flex;
@@ -121,6 +127,7 @@
       gap: 16px;
     }
   }
+
   &__inner {
     @include v.flex;
 
@@ -140,9 +147,11 @@
       justify-content: flex-end;
     }
   }
+
   &__lang {
     display: flex;
   }
+
   &__lang-item {
     cursor: pointer;
     padding: 5px 7px;
@@ -156,15 +165,48 @@
       background: var(--accent-color);
     }
   }
+
   &__nav {
-    display: none;
+    // display: none;
+    position: fixed;
+    z-index: 10;
+    bottom: 0;
+    left: 8px;
+    right: 8px;
+    background: #000;
+    padding: 12px;
+    border-top-left-radius: v.$rounded-md;
+    border-top-right-radius: v.$rounded-md;
+    transform: translateY(110%);
+    transition: transform v.$transition-deley;
+
+    &.active {
+      transform: translateY(0);
+    }
 
     @media (min-width: v.$breacpoint-md) {
-      display: block;
+      position: static;
+      background: transparent;
+      padding: 0;
+      border: 0;
     }
   }
+
+  &__nav-close {
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+    display: block;
+    margin: 0 0 20px auto;
+
+    @media (min-width: v.$breacpoint-md) {
+      display: none;
+    }
+  }
+
   &__nav-item {
   }
+
   &__nav-link {
     @include v.link(var(--wite-color));
 
@@ -177,19 +219,27 @@
       border-color: var(--accent-color);
     }
   }
+
   &__nav-list {
     display: flex;
+    flex-flow: column;
     gap: 15px;
+
+    @media (min-width: v.$breacpoint-md) {
+      flex-flow: row;
+    }
 
     @media (min-width: v.$breacpoint-lg) {
       justify-content: flex-end;
     }
   }
+
   &__phone {
     @include v.link(var(--wite-color));
 
     font-weight: 700;
   }
+
   &__social {
     display: none;
 
