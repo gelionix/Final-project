@@ -1,6 +1,18 @@
 import '../scss/style.scss';
 
-(function () {
+(() => {
+  const nav = document.querySelector('.header__nav');
+
+  document.querySelector('.header__box-burger')?.addEventListener('click', () => {
+    nav.classList.add('active');
+  })
+
+  document.querySelector('.header__nav-close')?.addEventListener('click', () => {
+    nav.classList.remove('active');
+  })
+})();
+
+(() => {
   const tabs = document.querySelectorAll('.tabs__links-item');
   const content = document.querySelectorAll('.tabs__content-item');
 

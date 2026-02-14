@@ -79,6 +79,11 @@
     height: 32px;
     cursor: pointer;
 
+    &:active {
+      background: var(--main-soft-color);
+      border-radius: v.$rounded-sm;
+    }
+
     @media (min-width: v.$breacpoint-md) {
       display: none;
     }
@@ -161,19 +166,22 @@
     border-radius: v.$rounded-sm;
     color: var(--wite-color);
 
+    &:hover {
+      background: var(--main-soft-color);
+    }
+
     &.active {
       background: var(--accent-color);
     }
   }
 
   &__nav {
-    // display: none;
     position: fixed;
     z-index: 10;
     bottom: 0;
     left: 8px;
     right: 8px;
-    background: #000;
+    background: var(--wite-color);
     padding: 12px;
     border-top-left-radius: v.$rounded-md;
     border-top-right-radius: v.$rounded-md;
@@ -189,6 +197,7 @@
       background: transparent;
       padding: 0;
       border: 0;
+      transform: translateY(0);
     }
   }
 
@@ -205,9 +214,31 @@
   }
 
   &__nav-item {
+    @media (max-width: v.$breacpoint-md) {
+      background: var(--grey-bg-color);
+      border-radius: v.$rounded-md;
+      width: 100%;
+      height: 43px;
+      text-align: center;
+      align-content: center;
+    }
   }
 
   &__nav-link {
+    @media (max-width: v.$breacpoint-md) {
+      border-bottom: none;
+      font-size: 24px;
+      color: var(--brand-regular-color);
+
+      &:active {
+        --brand-regular-color: var(--brand-regular-color);
+      }
+
+      &.active {
+        --brand-regular-color: var(--accent-color);
+      }
+    }
+
     @include v.link(var(--wite-color));
 
     text-transform: lowercase;
