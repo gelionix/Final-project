@@ -7,7 +7,32 @@ body {
 
 .wrapper {
   background: var(--super-soft-gradient);
+  border-bottom-left-radius: v.$rounded-md;
+  border-bottom-right-radius: v.$rounded-md;
+  box-shadow: inset;
+  position: relative;
+
+  &::before,
+  &::after {
+    content: "";
+    background: #CACADB;
+    height: 10px;
+    position: absolute;
+    left: 20px;
+    right: 20px;
+    bottom: -10px;
+    border-bottom-left-radius: v.$rounded-md;
+    border-bottom-right-radius: v.$rounded-md;
+  }
+
+  &::after {
+    background: #E7E7F2;
+    left: 40px;
+    right: 40px;
+    bottom: -20px;
+  }
 }
+
 .container {
   padding: 0 30px;
 

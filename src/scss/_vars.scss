@@ -95,3 +95,18 @@ $transition-deley: 0.3s ease-in-out;
     @content;
   }
 }
+@mixin viewport-lg {
+  @media (min-width: $breacpoint-lg) {
+    @content;
+  }
+}
+@mixin viewport-xl {
+  @media (min-width: $breacpoint-xl) {
+    @content;
+  }
+}
+@mixin viewport-xxl {
+  @media (min-width: $breacpoint-xxl) {
+    @content;
+  }
+}

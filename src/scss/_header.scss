@@ -41,9 +41,11 @@
   }
 }
 .header {
-  @media (min-width: v.$breacpoint-md) {
+  @include v.viewport-md {
     padding: 50px;
   }
+    
+  
 
   &__address {
     display: none;
