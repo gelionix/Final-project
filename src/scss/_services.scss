@@ -58,6 +58,9 @@
   }
 
   &__card {
+    display: flex;
+    flex-flow: column;
+    
     @include v.viewport-md {
       flex: 1 1 45%;
     }

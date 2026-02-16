@@ -44,13 +44,11 @@
   @include v.viewport-md {
     padding: 50px;
   }
-    
-  
 
   &__address {
     display: none;
 
-    @media (min-width: v.$breacpoint-md) {
+    @include v.viewport-md {
       display: block;
       counter-reset: var(--grey-text-color);
     }
@@ -62,12 +60,12 @@
     margin: 0 -15px;
     padding: 15px 0 10px;
 
-    @media (min-width: v.$breacpoint-md) {
+    @include v.viewport-md {
       margin: 0;
       padding: 0;
     }
 
-    @media (min-width: v.$breacpoint-lg) {
+    @include v.viewport-lg {
       position: absolute;
       top: 50%;
       left: 30px;
@@ -86,7 +84,7 @@
       border-radius: v.$rounded-sm;
     }
 
-    @media (min-width: v.$breacpoint-md) {
+    @include v.viewport-md {
       display: none;
     }
 
@@ -115,7 +113,7 @@
 
   &__box-logo {
     img {
-      @media (min-width: v.$breacpoint-md) {
+      @include v.viewport-md {
         width: 130px;
         height: 60px;
       }
@@ -123,13 +121,13 @@
   }
 
   &__container {
-    @media (min-width: v.$breacpoint-md) {
+    @include v.viewport-md {
       display: flex;
       flex-flow: column;
       gap: 30px;
     }
 
-    @media (min-width: v.$breacpoint-lg) {
+    @include v.viewport-lg {
       position: relative;
       gap: 16px;
     }
@@ -142,7 +140,7 @@
     padding: 10px 15px;
     background: rgba(245, 245, 250, 0.2);
 
-    @media (min-width: v.$breacpoint-md) {
+    @include v.viewport-md {
       margin: 0;
       padding: 0;
       background: none;
@@ -150,7 +148,7 @@
       gap: 6px;
     }
 
-    @media (min-width: v.$breacpoint-lg) {
+    @include v.viewport-lg {
       justify-content: flex-end;
     }
   }
@@ -194,7 +192,7 @@
       transform: translateY(0);
     }
 
-    @media (min-width: v.$breacpoint-md) {
+    @include v.viewport-md {
       position: static;
       background: transparent;
       padding: 0;
@@ -210,46 +208,53 @@
     display: block;
     margin: 0 0 20px auto;
 
-    @media (min-width: v.$breacpoint-md) {
+    @include v.viewport-md {
       display: none;
     }
   }
 
   &__nav-item {
-    @media (max-width: v.$breacpoint-md) {
-      background: var(--grey-bg-color);
-      border-radius: v.$rounded-md;
-      width: 100%;
-      height: 43px;
-      text-align: center;
-      align-content: center;
+    background: var(--grey-bg-color);
+    border-radius: v.$rounded-md;
+    width: 100%;
+    height: 43px;
+    text-align: center;
+    align-content: center;
+
+    @include v.viewport-md {
+      background: transparent;
+      border-radius: 0;
+      width: auto;
+      height: auto;
     }
   }
 
   &__nav-link {
-    @media (max-width: v.$breacpoint-md) {
-      border-bottom: none;
-      font-size: 24px;
-      color: var(--brand-regular-color);
-
-      &:active {
-        --brand-regular-color: var(--brand-regular-color);
-      }
-
-      &.active {
-        --brand-regular-color: var(--accent-color);
-      }
-    }
-
-    @include v.link(var(--wite-color));
-
+    border-bottom: none;
     text-transform: lowercase;
     font-weight: 700;
     padding-bottom: 3px;
-    border-bottom: 2px solid transparent;
+    font-size: 24px;
+    color: var(--brand-regular-color);
+
+    &:active {
+      --brand-regular-color: var(--brand-regular-color);
+    }
+
+    &.active {
+      --brand-regular-color: var(--accent-color);
+    }
+
+    @include v.link;
 
     @include v.hover {
       border-color: var(--accent-color);
+    }
+
+    @include v.viewport-md {
+      --brand-regular-color: var(--wite-color);
+      font-size: 16px;
+      border-bottom: 2px solid transparent;
     }
   }
 
@@ -258,11 +263,11 @@
     flex-flow: column;
     gap: 15px;
 
-    @media (min-width: v.$breacpoint-md) {
+    @include v.viewport-md {
       flex-flow: row;
     }
 
-    @media (min-width: v.$breacpoint-lg) {
+    @include v.viewport-lg {
       justify-content: flex-end;
     }
   }
@@ -276,7 +281,7 @@
   &__social {
     display: none;
 
-    @media (min-width: v.$breacpoint-md) {
+    @include v.viewport-md {
       @include v.link(var(--wite-color));
 
       display: block;

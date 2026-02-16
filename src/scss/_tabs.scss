@@ -4,7 +4,7 @@
   padding: 30px 0;
 
   &__container {
-    @media (min-width: v.$breacpoint-lg) {
+    @include v.viewport-lg {
       display: flex;
       align-items: center;
     }
@@ -26,11 +26,11 @@
       width: 0;
     }
 
-    @media (min-width: v.$breacpoint-md) {
+    @include v.viewport-md {
       margin-right: calc(-50vw + 324px);
     }
 
-    @media (min-width: v.$breacpoint-lg) {
+    @include v.viewport-lg {
       margin-right: 0;
       padding: 0 64px 0 0;
       overflow: hidden;
@@ -65,7 +65,7 @@
     padding-top: 34px;
     border-top: 4px solid rgba(255, 255, 255, 0.3);
 
-    @media (min-width: v.$breacpoint-lg) {
+    @include v.viewport-lg {
       border-top: 0;
       padding: 0 0 0 60px;
       flex: 1 1 50%;
