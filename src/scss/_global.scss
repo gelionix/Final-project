@@ -9,8 +9,8 @@ body {
   background: var(--super-soft-gradient);
   border-bottom-left-radius: v.$rounded-md;
   border-bottom-right-radius: v.$rounded-md;
-  box-shadow: inset;
   position: relative;
+  margin-bottom: 20px;
 
   &::before,
   &::after {
