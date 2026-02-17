@@ -1,3 +1,9 @@
+import Swiper from 'swiper';
+import { Pagination } from 'swiper/modules';
+
+import 'swiper/css';
+import 'swiper/css/pagination';
+
 import '../scss/style.scss';
 
 (() => {
@@ -29,5 +35,22 @@ import '../scss/style.scss';
       tabs[index].classList.add('active');
       content[index].classList.add('active');
     });
+  });
+})();
+
+(() => {
+  const teamSwiper = document.querySelector('.team__swiper');
+
+  if (!teamSwiper) return;
+
+  const swiper = new Swiper('.team__swiper', {
+    modules: [Pagination],
+
+    loop: true,
+    spaceBetween: 30,
+
+    pagination: {
+      el: '.swiper-pagination',
+    },
   });
 })();

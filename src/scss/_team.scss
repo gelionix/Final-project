@@ -6,4 +6,97 @@
   @include v.viewport-md {
     padding: 30px 0;
   }
+
+  &__container {
+    .swiper-pagination {
+      --swiper-pagination-color: var(--brand-regular-color);
+      --swiper-pagination-bullet-inactive-color: var(--swiper-pagination-color);
+      --swiper-pagination-bullet-size : 16px;
+      position: static;
+      margin-top: 30px;
+    }
+  }
+
+  &__swiper {
+  }
+
+  &__wrapper {
+    align-items: center;
+  }
+
+  &__slide {
+    border-radius: v.$rounded-md;
+    overflow: hidden;
+
+    @include v.viewport-lg {
+      display: flex;
+    }
+  }
+
+  &__image {
+    height: 500px;
+
+    @include v.viewport-lg {
+      flex: 0 0 400px;
+      height: auto;
+      position: relative;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+  }
+
+  &__inner {
+    padding: 30px;
+    background: var(--grey-bg-color);
+  }
+
+  &__inner-link {
+    @include v.link;
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    position: relative;
+
+    span {
+      content: "";
+      position: absolute;
+      top: 4.5px;
+      right: -9px;
+      width: 7px;
+      height: 7px;
+      border-bottom: 2px solid;
+      border-left: 2px solid;
+      transform: rotate(0.62turn);
+    }
+  }
+
+  &__inner-title {
+    @include v.subtitle;
+    @include v.text-gradient(var(--red-text-gradient));
+
+    margin-top: 5px;
+  }
+
+  &__inner-name {
+    margin-top: 30px;
+    color: var(--grey-text-color);
+    font-weight: 700;
+    font-size: 16px;
+
+    p + p {
+      font-weight: 400;
+      font-size: 14px;
+      margin-top: 6px;
+      line-height: 22px;
+    }
+  }
 }
