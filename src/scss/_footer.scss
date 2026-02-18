@@ -15,7 +15,7 @@
     }
   }
 
-  &__box {
+  &__inner {
     @include v.flex;
     flex-direction: column;
     gap: 21px;
@@ -34,9 +34,8 @@
 
     @include v.viewport-md {
       position: absolute;
-      top: 39%;
+      top: 36.5%;
       right: 30px;
-      transform: translateY(-50%);
     }
   }
 
@@ -55,7 +54,7 @@
     text-transform: uppercase;
   }
 
-  &__list {
+  &__list, li {
     @include v.flex;
 
     flex-direction: column;

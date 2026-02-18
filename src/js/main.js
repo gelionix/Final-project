@@ -1,8 +1,9 @@
 import Swiper from 'swiper';
-import { Pagination } from 'swiper/modules';
+import { Pagination, Autoplay } from 'swiper/modules';
 
 import 'swiper/css';
 import 'swiper/css/pagination';
+import 'swiper/css/autoplay';
 
 import '../scss/style.scss';
 
@@ -44,9 +45,13 @@ import '../scss/style.scss';
   if (!teamSwiper) return;
 
   const swiper = new Swiper('.team__swiper', {
-    modules: [Pagination],
+    modules: [Pagination, Autoplay],
 
     loop: true,
+    autoplay: {
+      delay: 5000,
+    },
+
     spaceBetween: 30,
 
     pagination: {
