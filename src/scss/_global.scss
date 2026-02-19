@@ -18,7 +18,7 @@ body {
   border-bottom-left-radius: v.$rounded-md;
   border-bottom-right-radius: v.$rounded-md;
   position: relative;
-  margin-bottom: 35px;
+  margin-bottom: 20px;
 
   &::before,
   &::after {
@@ -38,10 +38,6 @@ body {
     left: 40px;
     right: 40px;
     bottom: -20px;
-  }
-
-  @include v.viewport-md {
-    margin-bottom: 50px;
   }
 }
 

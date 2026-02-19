@@ -1,11 +1,7 @@
 @use "vars" as v;
 
 .services {
-  padding: 0 0 60px 0;
-
-  @include v.viewport-md {
-      padding: 30px 0;
-    }
+  padding-bottom: 60px;
 
   &__container {
     display: flex;
@@ -14,7 +10,6 @@
   }
 
   &__inner {
-    padding: 0 0 30px 0;
   }
 
   &__link {
@@ -25,7 +20,7 @@
     text-transform: uppercase;
     position: relative;
 
-    span {
+    &::before {
     content: "";
     position: absolute;
     top: 4.5px;
@@ -50,10 +45,11 @@
     display: flex;
     flex-wrap: wrap;
     gap: 30px;
+    padding-top: 30px;
 
     @include v.viewport-md {
       gap: 60px;
-      padding: 30px 0;
+      padding-top: 60px;
     }
   }
 

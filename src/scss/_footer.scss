@@ -1,7 +1,7 @@
 @use "vars" as v;
 
 .footer {
-  color: var(--grey-bg-color);
+  background: var(--grey-bg-color);
 
   &__container {
     @include v.flex(center);

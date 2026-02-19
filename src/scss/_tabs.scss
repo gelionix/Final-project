@@ -3,6 +3,10 @@
 .tabs {
   padding: 30px 0;
 
+  @include v.viewport-md {
+    padding: 60px 0;
+  }
+
   &__container {
     @include v.viewport-lg {
       display: flex;
@@ -20,7 +24,7 @@
     overflow: auto hidden;
     margin-right: -30px;
     padding-right: 30px;
-    padding-bottom: 10px;
+    padding-bottom: 30px;
 
     &::-webkit-scrollbar {
       width: 0;
@@ -28,6 +32,7 @@
 
     @include v.viewport-md {
       margin-right: calc(-50vw + 324px);
+      padding-bottom: 60px;
     }
 
     @include v.viewport-lg {
@@ -64,6 +69,10 @@
     color: var(--wite-color);
     padding-top: 34px;
     border-top: 4px solid rgba(255, 255, 255, 0.3);
+
+    @include v.viewport-md {
+      padding-top: 64px;
+    }
 
     @include v.viewport-lg {
       border-top: 0;

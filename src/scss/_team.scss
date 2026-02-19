@@ -1,10 +1,11 @@
 @use "vars" as v;
 
 .team {
-  padding: 15px 0 30px 0;
+  padding-top: 30px;
+  background: var(--wite-color);
 
   @include v.viewport-md {
-    padding: 30px 0;
+    padding-top: 60px;
   }
 
   &__container {
@@ -68,7 +69,7 @@
     text-transform: uppercase;
     position: relative;
 
-    span {
+    &::before {
       content: "";
       position: absolute;
       top: 4.5px;
@@ -84,6 +85,7 @@
   &__inner-title {
     @include v.subtitle;
     @include v.text-gradient(var(--red-text-gradient));
+    line-height: 1.2;
 
     margin-top: 5px;
   }
