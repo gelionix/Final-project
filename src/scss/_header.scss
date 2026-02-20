@@ -55,10 +55,30 @@
   }
 
   &__box {
-    @include v.flex;
+    @include v.flex(flex-start, stretch);
 
     margin: 0 -15px;
     padding: 15px 0 10px;
+    gap: 4px;
+
+    svg {
+      width: 12px;
+      height: 26px;
+
+      @include v.viewport-md {
+        width: 21px;
+        height: 47px;
+      }
+    }
+
+    span {
+      font-size: 20px;
+      color: var(--wite-color);
+
+      @include v.viewport-md {
+        font-size: 36px;
+      }
+    }
 
     @include v.viewport-md {
       margin: 0;
@@ -78,6 +98,7 @@
     width: 32px;
     height: 32px;
     cursor: pointer;
+    margin-left: auto;
 
     &:active {
       background: var(--main-soft-color);
@@ -129,6 +150,7 @@
 
     @include v.viewport-lg {
       position: relative;
+      gap: 16px;
     }
   }
 
@@ -241,12 +263,20 @@
 
     &.active {
       --brand-regular-color: var(--accent-color);
+
+      @include v.viewport-md {
+        border-bottom: 2px solid var(--accent-color);
+      }
     }
 
     @include v.link;
 
     @include v.hover {
       border-color: var(--accent-color);
+
+      @include v.viewport-md {
+        --accent-color: var(--wite-color);
+      }
     }
 
     @include v.viewport-md {
