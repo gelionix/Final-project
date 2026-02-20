@@ -40,6 +40,11 @@
     text-align: center;
   }
 }
+
+.wite__header {
+  background: var(--wite-color);
+}
+
 .header {
   @include v.viewport-md {
     padding: 50px;
