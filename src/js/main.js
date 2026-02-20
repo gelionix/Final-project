@@ -59,3 +59,24 @@ import '../scss/style.scss';
     },
   });
 })();
+
+
+(() => {
+  const navigation = document.querySelectorAll('.header__nav-item');
+  const content = document.querySelectorAll('.header__nav-link');
+
+  navigation.forEach((nav, index) => {
+    nav.addEventListener('click', () => {
+      navigation.forEach((nav) => {
+        nav.classList.remove('active');
+      });
+
+      content.forEach((link) => {
+        link.classList.remove('active');
+      });
+
+      navigation[index].classList.add('active');
+      content[index].classList.add('active');
+    });
+  });
+})();
