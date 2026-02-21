@@ -8,16 +8,56 @@ import 'swiper/css/autoplay';
 import '../scss/style.scss';
 
 (() => {
-  const nav = document.querySelector('.header__nav');
+  const nav = document.querySelector('.header__nav, .w-header__nav');
 
-  document.querySelector('.header__box-burger')?.addEventListener('click', () => {
+  document.querySelector('.header__box-burger, .w-header__box-burger')?.addEventListener('click', () => {
     nav.classList.add('active');
   })
 
-  document.querySelector('.header__nav-close')?.addEventListener('click', () => {
+  document.querySelector('.header__nav-close, .w-header__nav-close')?.addEventListener('click', () => {
     nav.classList.remove('active');
   })
 })();
+
+(() => {
+  const navigation = document.querySelectorAll('.header__nav-item, .w-header__nav-item');
+  const content = document.querySelectorAll('.header__nav-link, .w-header__nav-link');
+
+  navigation.forEach((nav, index) => {
+    nav.addEventListener('click', () => {
+      navigation.forEach((nav) => {
+        nav.classList.remove('active');
+      });
+
+      content.forEach((link) => {
+        link.classList.remove('active');
+      });
+
+      navigation[index].classList.add('active');
+      content[index].classList.add('active');
+    });
+  });
+})();
+
+// (() => {
+//   const langs = document.querySelectorAll('.header__lang-item, .w-header__lang-item');
+//   const content = document.querySelectorAll('.header__lang-link, .w-header__lang-link');
+
+//   langs.forEach((lang, index) => {
+//     lang.addEventListener('click', () => {
+//       langs.forEach((lang) => {
+//         lang.classList.remove('active');
+//       });
+
+//       content.forEach((link) => {
+//         link.classList.remove('active');
+//       });
+
+//       langs[index].classList.add('active');
+//       content[index].classList.add('active');
+//     });
+//   });
+// })();
 
 (() => {
   const tabs = document.querySelectorAll('.tabs__links-item');
@@ -61,22 +101,3 @@ import '../scss/style.scss';
 })();
 
 
-(() => {
-  const navigation = document.querySelectorAll('.header__nav-item');
-  const content = document.querySelectorAll('.header__nav-link');
-
-  navigation.forEach((nav, index) => {
-    nav.addEventListener('click', () => {
-      navigation.forEach((nav) => {
-        nav.classList.remove('active');
-      });
-
-      content.forEach((link) => {
-        link.classList.remove('active');
-      });
-
-      navigation[index].classList.add('active');
-      content[index].classList.add('active');
-    });
-  });
-})();

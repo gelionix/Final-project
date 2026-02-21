@@ -7,83 +7,219 @@
     <title>Publications</title>
   </head>
   <body>
-    <div class="wrapper">
-      <div class="head">
-        <header class="head__header header wite__header">
-          <div class="container header__container">
-            <div class="header__inner">
-              <ul class="header__lang">
-                <li class="header__lang-item">UA</li>
-                <li class="header__lang-item">PL</li>
-                <li class="header__lang-item active">EN</li>
-              </ul>
+    <header class="head__header w-header">
+      <div class="container w-header__container">
+        <div class="w-header__inner">
+          <ul class="w-header__lang">
+            <li class="w-header__lang-item">
+              UA
+              <!-- <a class="w-header__lang-link" href="#">UA</a> -->
+            </li>
+            <li class="w-header__lang-item">
+              PL
+              <!-- <a class="w-header__lang-link" href="#">PL</a> -->
+            </li>
+            <li class="w-header__lang-item active">
+              EN
+              <!-- <a class="w-header__lang-link" href="#">EN</a> -->
+            </li>
+          </ul>
 
-              <span class="dotted dotted--default"></span>
+          <span class="dotted dotted--default"></span>
 
-              <address class="header__address">
+          <address class="w-header__address">
+            Kyiv, Mechnikova str., 14/1
+          </address>
+
+          <span class="dotted dotted--default"></span>
+
+          <a class="w-header__phone" href="tell:+380800211927">0800 211 927</a>
+
+          <span class="dotted dotted--default"></span>
+
+          <a class="w-header__social" href="#">
+            <svg>
+              <use href="/src/img/icons/sprites.svg#facebook"></use>
+            </svg>
+          </a>
+        </div>
+
+        <div class="w-header__box">
+          <a class="w-header__box-logo" href="../index.html">
+            <img
+              src="/src/img/logo-dark.svg"
+              alt="Hilegal"
+              width="69"
+              height="32"
+            />
+          </a>
+          <svg>
+            <use href="/src/img/icons/sprites.svg#slash"></use>
+          </svg>
+          <span>publications</span>
+
+          <div class="w-header__box-burger">
+            <span></span>
+          </div>
+        </div>
+
+        <nav class="w-header__nav">
+          <svg class="w-header__nav-close">
+            <use href="/src/img/icons/sprites.svg#close"></use>
+          </svg>
+          <ul class="w-header__nav-list">
+            <li class="w-header__nav-item">
+              <a class="w-header__nav-link" href="#">about us</a>
+            </li>
+            <li class="w-header__nav-item">
+              <a class="w-header__nav-link" href="services.html">services</a>
+            </li>
+            <li class="w-header__nav-item">
+              <a class="w-header__nav-link" href="#">team</a>
+            </li>
+            <li class="w-header__nav-item">
+              <a class="w-header__nav-link active" href="publications.html"
+                >publications</a
+              >
+            </li>
+            <li class="w-header__nav-item">
+              <a class="w-header__nav-link" href="#">contact</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="publications">
+        <div class="container publications__container switch">
+          <div class="publications__switch">
+            <input
+              class="publications__switch-input hidden"
+              type="checkbox"
+              id="switch"/>
+            <label class="publications__switch-lable" for="switch">
+              <span>news</span>
+              <span>articles</span>
+            </label>
+          </div>
+          <div class="publications__cards">
+            <article class="publications__card">
+              <div class="publications__card-image">
+                <img
+                  src="/src/img/webp/publication-1.webp"
+                  alt="Equity associate"
+                  width="1000"
+                  height="600"
+                />
+              </div>
+              <div class="publications__card-inner">
+                <a class="publications__card-link" href="#">Equity associate</a>
+
+                <p class="publications__card-data">April 22</p>
+                <p class="publications__card-description">
+                  I'm a jun on projects. I am a co-owner of a law firm. How it
+                  happened. Before entering my parents told me that if I…
+                </p>
+              </div>
+            </article>
+            <article class="publications__card">
+              <div class="publications__card-image">
+                <img
+                  src="/src/img/webp/publication-2.webp"
+                  alt="Penalty for the Good Corporation"
+                  width="1000"
+                  height="600"
+                />
+              </div>
+              <div class="publications__card-inner">
+                <a class="publications__card-link" href="#"
+                  >Penalty for the Good Corporation: what will happen to Google
+                  and others for violating the GDPR</a
+                >
+
+                <p class="publications__card-data">September 29</p>
+                <p class="publications__card-description">
+                  And why the recovery of 50 million euros could be a fateful
+                  precedent According to Mind.ua January 21 National Commission
+                  for Data Protection.
+                </p>
+              </div>
+            </article>
+            <article class="publications__card">
+              <div class="publications__card-image">
+                <img
+                  src="/src/img/webp/publication-3.webp"
+                  alt="Millennial Testament"
+                  width="1000"
+                  height="600"
+                />
+              </div>
+              <div class="publications__card-inner">
+                <a class="publications__card-link" href="#"
+                  >Millennial Testament</a
+                >
+
+                <p class="publications__card-data">August 19</p>
+                <p class="publications__card-description">
+                  What and how modern vloggers, opinion leaders and
+                  crypto-millionaires will inherit A typical legacy of the
+                  Ukrainian generation X looks like this: an apartment in…
+                </p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer__container">
+        <span class="footer__line line--default"></span>
+        <div class="footer__inner">
+          <ul class="footer__list">
+            <li>
+              <address class="footer__address">
                 Kyiv, Mechnikova str., 14/1
               </address>
+            </li>
 
-              <span class="dotted dotted--default"></span>
+            <span class="dotted dotted--default"></span>
 
-              <a class="header__phone" href="tell:+380800211927"
-                >0800 211 927</a
-              >
-
-              <span class="dotted dotted--default"></span>
-
-              <a class="header__social" href="#">
+            <li>
+              <a class="footer__map" href="#">On map</a>
+            </li>
+          </ul>
+          <ul class="footer__list">
+            <li>
+              <a class="footer__social" href="#">
                 <svg>
                   <use href="/src/img/icons/sprites.svg#facebook"></use>
                 </svg>
               </a>
-            </div>
+            </li>
 
-            <div class="header__box">
-              <a class="header__box-logo" href="index.html">
-                <img
-                  src="/src/img/logo-primary.svg"
-                  alt="Hilegal"
-                  width="69"
-                  height="32"
-                />
-              </a>
+            <span class="dotted dotted--default"></span>
 
-              <div class="header__box-burger">
-                <span></span>
-              </div>
-            </div>
+            <li>
+              <a class="footer__phone" href="tell:+380800211927"
+                >0800 211 927</a
+              >
+            </li>
 
-            <nav class="header__nav">
-              <svg class="header__nav-close">
-                <use href="/src/img/icons/sprites.svg#close"></use>
-              </svg>
-              <ul class="header__nav-list">
-                <li class="header__nav-item">
-                  <a class="header__nav-link" href="#">about us</a>
-                </li>
-                <li class="header__nav-item">
-                  <a class="header__nav-link" href="pages/services.html"
-                    >services</a
-                  >
-                </li>
-                <li class="header__nav-item">
-                  <a class="header__nav-link" href="#">team</a>
-                </li>
-                <li class="header__nav-item">
-                  <a class="header__nav-link" href="pages/publications.html"
-                    >publications</a
-                  >
-                </li>
-                <li class="header__nav-item">
-                  <a class="header__nav-link" href="#">contact</a>
-                </li>
-              </ul>
-            </nav>
-          </div>
-        </header>
+            <span class="dotted dotted--default"></span>
+
+            <li>
+              <a class="footer__email" href="mailto:contact@forstudy.space"
+                >contact@forstudy.space</a
+              >
+            </li>
+          </ul>
+        </div>
+        <p class="footer__company">© 2021 HLEGAL Law company, LLC</p>
       </div>
-    </div>
+    </footer>
+
     <script type="module" src="/src/js/main.js"></script>
   </body>
 </html>
