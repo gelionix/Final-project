@@ -1,5 +1,9 @@
 @use "vars" as v;
 
+.wrap {
+  margin-bottom: 80px;
+}
+
 .services {
   padding-bottom: 60px;
 
@@ -21,24 +25,21 @@
     position: relative;
 
     &::before {
-    content: "";
-    position: absolute;
-    top: 4.5px;
-    right: -9px;
-    width: 7px;
-    height: 7px;
-    border-bottom: 2px solid;
-    border-left: 2px solid;
-    transform: rotate(0.62turn);
+      content: "";
+      position: absolute;
+      top: 4.5px;
+      right: -9px;
+      width: 7px;
+      height: 7px;
+      border-bottom: 2px solid;
+      border-left: 2px solid;
+      transform: rotate(0.62turn);
     }
   }
 
   &__title {
+    @include v.subtitle;
     @include v.text-gradient(var(--red-text-gradient));
-
-    font-weight: 700;
-    font-size: 30px;
-    margin-top: 10px;
   }
 
   &__cards {
@@ -56,7 +57,7 @@
   &__card {
     display: flex;
     flex-flow: column;
-    
+
     @include v.viewport-md {
       flex: 1 1 45%;
     }
@@ -68,7 +69,6 @@
   &__card-img {
     width: 92px;
     height: 92px;
-
   }
 
   &__card-title {
@@ -84,5 +84,159 @@
     color: var(--wite-color);
     line-height: 26px;
     margin-top: 15px;
+  }
+}
+
+.it-services {
+  &__container {
+    display: flex;
+    flex-wrap: wrap;
+    flex-flow: column;
+
+    @include v.viewport-xl {
+      max-width: 1080px;
+      margin: 0 auto;
+    }
+    @include v.viewport-xxl {
+      max-width: 1360px;
+      margin: 0 auto;
+    }
+  }
+
+  &__inner {
+  }
+
+  &__link {
+    @include v.link;
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    position: relative;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 4.5px;
+      right: -9px;
+      width: 7px;
+      height: 7px;
+      border-bottom: 2px solid;
+      border-left: 2px solid;
+      transform: rotate(0.62turn);
+    }
+  }
+
+  &__cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    padding-bottom: 60px;
+
+    @include v.viewport-md {
+      gap: 60px;
+    }
+  }
+
+  &__card {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+
+    @include v.viewport-md {
+      flex: 1 1 45%;
+    }
+    @include v.viewport-lg {
+      flex: 1 1 27%;
+    }
+  }
+
+  &__card-img {
+    width: 92px;
+    height: 92px;
+  }
+
+  &__card-title {
+    @include v.subtitle;
+    @include v.text-gradient(var(--red-text-gradient));
+
+    margin-top: 28px;
+  }
+
+  &__card-desc {
+    font-size: 19px;
+    color: var(--wite-color);
+    line-height: 30px;
+    word-spacing: 1px;
+    margin-top: 28px;
+    text-align: center;
+  }
+
+  &__button {
+    button {
+      color: var(--wite-color);
+      font-weight: 700;
+      padding: 18px 30px;
+      background: var(--brand-regular-color);
+      border-radius: v.$rounded-md;
+      box-shadow: 0 0 20px 0 #24a3ff80;
+      margin-top: 30px;
+    }
+  }
+
+  &__area {
+    display: flex;
+    flex-wrap: wrap;
+    border-top: 4px solid #ffffff80;
+    margin-top: 30px;
+
+    @include v.viewport-md {
+      margin-top: 60px;
+    }
+  }
+
+  &__area-title {
+    font-weight: 700;
+    font-size: 22px;
+    color: var(--wite-color);
+    padding-top: 34px;
+  }
+
+  &__area-inner {
+    display: flex;
+    flex-flow: column;
+
+    @include v.viewport-md {
+      flex-flow: row;
+      gap: 60px;
+    }
+  }
+
+  &__area-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    font-size: 18px;
+    line-height: 26px;
+    word-spacing: 1px;
+    padding-top: 30px;
+    position: relative;
+  }
+
+  &__area-item {
+    padding-left: 14px;
+    position: relative;
+    color: var(--wite-color);
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 12px;
+      left: 0;
+      width: 6px;
+      height: 6px;
+      background: var(--accent-color);
+      border-radius: v.$rounded-full;
+    }
   }
 }
