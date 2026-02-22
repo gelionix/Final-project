@@ -4,14 +4,61 @@
   padding-top: 30px;
   background: var(--grey-bg-color);
 
-  .switch {
-    justify-content: center;
-  }
-
   &__container {
     display: flex;
     flex-wrap: wrap;
     // justify-content: center;
+  }
+
+  .switch {
+    justify-content: center;
+  }
+
+  &__switch {
+    span {
+      &:active {
+        color: var(--brand-active-color);
+      }
+
+      transition: all 0.1s linear;
+    }
+  }
+
+  &__switch-input:checked + &__switch-lable::before {
+    transform: translateX(calc(100% + 5px));
+  }
+
+  &__switch-lable {
+    display: flex;
+    gap: 7px;
+    position: relative;
+    height: 42px;
+    border-radius: v.$rounded-md;
+    background: var(--grey-separator-color);
+
+    span {
+      color: var(--main-color);
+      font-weight: 700;
+      padding: 10px 30px;
+      position: relative;
+      flex: 1 1 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 1;
+    }
+
+    &:before {
+      content: "";
+      position: absolute;
+      top: 2px;
+      left: 2px;
+      padding: 19px 30px;
+      width: 48%;
+      background: var(--wite-color);
+      border-radius: 10px;
+      transition: all 0.3s linear;
+    }
   }
 
   &__inner {
@@ -122,56 +169,17 @@
     letter-spacing: 1px;
   }
 
-  &__switch {
-    span:nth-child(1) {
-      &:active {
-        transform: translateX(-2px);
-      }
+  &__button {
+    padding: 30px 0;
+
+    button {
+      font-weight: 700;
+      font-size: 16px;
+      padding: 18px 30px;
+      color: var(--wite-color);
+      background: var(--brand-regular-color);
+      box-shadow: 0 0 20px 0 #24a3ff80;
+      border-radius: v.$rounded-md;
     }
-    span:nth-child(2) {
-      &:active {
-        transform: translateX(2px);
-      }
-    }
-  }
-
-  &__switch {
-  }
-
-  &__switch span {
-    transition: all 0.1s linear;
-  }
-
-  &__switch-input:checked + &__switch-lable::before {
-    transform: translateX(calc(100% - 2px));
-  }
-
-  &__switch-lable {
-    display: flex;
-    position: relative;
-    height: 36px;
-    border-radius: 30px;
-    border: 1px solid var(--primery-color);
-  }
-
-  &__switch-lable span {
-    position: relative;
-    flex: 1 1 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 1;
-  }
-
-  &__switch-lable::before {
-    content: "";
-    position: absolute;
-    top: 1px;
-    left: 1px;
-    bottom: 1px;
-    width: 50%;
-    background: var(--primery-color);
-    border-radius: 30px;
-    transition: all 0.3s linear;
   }
 }
