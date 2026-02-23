@@ -31,6 +31,10 @@
       border-left: 2px solid;
       transform: rotate(-45deg);
     }
+
+    &:active {
+      transform: translateY(1px);
+    }
   }
 
   &__title {

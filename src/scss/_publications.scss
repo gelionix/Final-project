@@ -21,6 +21,7 @@
       }
 
       transition: all 0.1s linear;
+      cursor: pointer;
     }
   }
 
@@ -175,11 +176,20 @@
     button {
       font-weight: 700;
       font-size: 16px;
+      background: var(--brand-regular-color);
+      border-radius: v.$rounded-md;
+      box-shadow: 0 0 20px 0 #24a3ff80;
+    }
+
+    a {
       padding: 18px 30px;
       color: var(--wite-color);
-      background: var(--brand-regular-color);
-      box-shadow: 0 0 20px 0 #24a3ff80;
-      border-radius: v.$rounded-md;
+      text-decoration: none;
+      display: block;
+    }
+
+    &:active {
+      transform: translateY(1px);
     }
   }
 }

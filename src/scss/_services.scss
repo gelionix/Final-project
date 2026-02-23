@@ -1,7 +1,7 @@
 @use "vars" as v;
 
 .wrap {
-  margin-bottom: 80px;
+  margin-top: 80px;
 }
 
 .services {
@@ -40,6 +40,7 @@
   &__title {
     @include v.subtitle;
     @include v.text-gradient(var(--red-text-gradient));
+    margin-top: 10px;
   }
 
   &__cards {
@@ -173,14 +174,24 @@
   }
 
   &__button {
+    margin-top: 30px;
+
     button {
-      color: var(--wite-color);
       font-weight: 700;
-      padding: 18px 30px;
-      background: var(--brand-regular-color);
-      border-radius: v.$rounded-md;
       box-shadow: 0 0 20px 0 #24a3ff80;
-      margin-top: 30px;
+      border-radius: v.$rounded-md;
+      background: var(--brand-regular-color);
+    }
+
+    a {
+      color: var(--wite-color);
+      padding: 18px 30px;
+      display: block;
+      text-decoration: none;
+    }
+
+    &:active {
+      transform: translateY(1px);
     }
   }
 
